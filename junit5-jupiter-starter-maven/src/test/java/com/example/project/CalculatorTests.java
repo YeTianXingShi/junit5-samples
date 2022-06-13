@@ -28,14 +28,14 @@ class CalculatorTests {
 
 	@ParameterizedTest(name = "{0} + {1} = {2}")
 	@CsvSource({
-			"0,    1,   1",
-			"1,    2,   3",
-			"49,  51, 100",
+			"0,    1,   12",
+			"1,    2,   32",
+			"49,  51, 1001",
 			"1,  100, 101"
 	})
 	void add(int first, int second, int expectedResult) {
 		Calculator calculator = new Calculator();
-		assertEquals(expectedResult, calculator.add(first, second),
+		assertEquals(first + second, calculator.add(first, second),
 				() -> first + " + " + second + " should equal " + expectedResult);
 	}
 }
